@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nanako No Sekai</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffd6e0, #ffe9f0, #fff5f9);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      color: #ff6fa8;
+      padding: 2rem;
+      position: relative;
+    }
+
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px #fff, 4px 4px #ffb6c1;
+      animation: float 3s ease-in-out infinite;
+      font-size: clamp(2rem, 6vw, 4rem);
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      z-index: 2;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ffb6c1, #ffc6d9);
+      color: white;
+      text-decoration: none;
+      padding: 1rem 1.2rem;
+      border-radius: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.6);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 14px rgba(255, 105, 180, 0.6);
+    }
+
+
+    footer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      z-index: 2;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+
+    .sakura {
+      position: absolute;
+      top: -10px;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50% 50% 50% 0;
+      opacity: 0.8;
+      transform: rotate(45deg);
+      animation: fall linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.5;
+      }
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.5rem;
+      }
+      .btn {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+      }
+      .social-icon {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌸 Nanako Chan Desu 🌸</h1>
+
+  <div class="button-container">
+    <a href="https://snaptheprice.com/welcome?ref=690e4dd0ea3592f9cfea3923" class="btn" target="_blank">Snap</a>
+    <a href="#" class="btn" target="_blank">Gallery</a>
+    <a href="#" class="btn" target="_blank">About</a>
+    <a href="#" class="btn" target="_blank">Contact</a>
+    <a href="#" class="btn" target="_blank">Shop</a>
+    <a href="#" class="btn" target="_blank">Blog</a>
+    <a href="#" class="btn" target="_blank">Music</a>
+    <a href="#" class="btn" target="_blank">Friends</a>
+    <a href="#" class="btn" target="_blank">Fan Club</a>
+  </div>
+
+  <footer>
+    <a href="https://www.facebook.com/profile.php?id=61583188875986" target="_blank">
+      <img src="Images/facebook.svg" alt="Facebook" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(300%) hue-rotate(300deg);">
+    </a>
+    <a href="https://www.instagram.com/nanakochandesu123/" target="_blank">
+      <img src="Images/instagram.svg" alt="Instagram" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(500%) hue-rotate(290deg);">
+    </a>
+    <a href="https://www.tiktok.com/@nanakochandesu" target="_blank">
+      <img src="Images/tiktok.svg" alt="TikTok" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(300%) hue-rotate(320deg);">
+    </a>
+    <a href="https://www.youtube.com/channel/UCk7QnhFlzGWasYMPwm8IvhQ" target="_blank">
+      <img src="Images/youtube.svg" alt="YouTube" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(500%) hue-rotate(320deg);">
+    </a>
+  </footer>
+
+
+  <script>
+    const numPetals = 25;
+    for (let i = 0; i < numPetals; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('sakura');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.animationDelay = Math.random() * 5 + 's';
+      petal.style.width = 10 + Math.random() * 10 + 'px';
+      petal.style.height = 10 + Math.random() * 10 + 'px';
+      petal.style.opacity = 0.6 + Math.random() * 0.4;
+      document.body.appendChild(petal);
+    }
+  </script>
+
+</body>
+</html>
