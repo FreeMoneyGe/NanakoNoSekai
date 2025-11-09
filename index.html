@@ -206,9 +206,6 @@
     }
   </script>
 
-<!--  <audio autoplay loop>-->
-<!--    <source src="Images/music.mp3" type="audio/mpeg">-->
-<!--  </audio>-->
 
 <button id="playBtn">Play Music 🎵</button>
 <audio id="bgMusic" loop>
@@ -222,6 +219,16 @@
     music.play();
     btn.style.display = 'none'; // hide button after start
   });
+</script>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-22D8EMLYTH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-22D8EMLYTH');
 </script>
 
 </body>
