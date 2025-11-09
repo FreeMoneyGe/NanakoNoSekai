@@ -54,7 +54,7 @@
     }
 
     .btn {
-      background: linear-gradient(45deg, #ffb6c1, #ffc6d9);
+<!--      background: linear-gradient(45deg, #ffb6c1, #ffc6d9);-->
       color: white;
       text-decoration: none;
       padding: 1rem 1.2rem;
@@ -72,6 +72,25 @@
       box-shadow: 0 6px 14px rgba(255, 105, 180, 0.6);
     }
 
+
+    .gbtn {
+      background-color: #64F5A6;
+      color: #333;
+      text-decoration: none;
+      padding: 1rem 1.2rem;
+      border-radius: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.6);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .gbtn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 14px rgba(255, 105, 180, 0.6);
+    }
     footer {
       display: flex;
       justify-content: center;
@@ -163,27 +182,42 @@
     50% { box-shadow: 0 0 20px rgba(255,105,180,0.8); transform: translateX(-50%) scale(1.05); }
     100% { box-shadow: 0 0 10px rgba(255,182,193,0.8); transform: translateX(-50%) scale(1); }
   }
+
+
+    .greeting {
+  font-family: 'Poppins', 'Cute Font', sans-serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #ffb6c1;
+  text-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
   </style>
 </head>
 <body>
 
   <h1>🌸 Nanako Chan 🌸</h1>
 
+
   <div class="button-container">
 
-    <a href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_L1ZYS&utm_source=default" class="btn" target="_blank">Binance</a>
-    <a href="#" class="btn" target="_blank">Bybit</a>
-    <a href="#" class="btn" target="_blank">OKX</a>
-    <a href="#" class="btn" target="_blank">Coinbase</a>
-    <a href="#" class="btn" target="_blank">KuCoin</a>
-    <a href="#" class="btn" target="_blank">Kraken</a>
-    <a href="#" class="btn" target="_blank">eBay</a>
-    <a href="#" class="btn" target="_blank">Amazon</a>
-<!--    <a href="#" class="btn" target="_blank">Fan Club</a>-->
-<!--    <a href="#" class="btn" target="_blank">Blog</a>-->
-<!--    <a href="#" class="btn" target="_blank">Fan Club</a>-->
-    <a href="https://snaptheprice.com/welcome?ref=690e4dd0ea3592f9cfea3923" class="btn" target="_blank">Snap</a>
+    <a href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_L1ZYS&utm_source=default" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Binance</a>
+    <a href="#" class="btn" target="_blank" style="background-color: black; color: white;">BYB<span style="color: goldenrod;">I</span>T</a>
+    <a href="#" class="btn" target="_blank" style="background-color: white; color: black;">OKX</a>
+    <a href="#" class="btn" target="_blank" style="background-color: #0052FF; color: white;">coinbase</a>
+    <a href="#" class="btn" target="_blank" style="background-color: white; color: #24AE8F;">KuCoin</a>
+    <a href="#" class="btn" target="_blank" style="background-color: #5841D8; color: white;">Kraken</a>
+    <a href="#" class="btn" target="_blank" style="background-color: white;"><span style="color: #E53238;">e</span><span style="color: #0064D2;">B</span><span style="color: #F5AF02;">a</span><span style="color: #86B817;">y</span></a>
+    <a href="#" class="btn" target="_blank" style="background-color: #232F3E; color: white;">amazon</a>
+<!--    <a href="#" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Fan Club</a>-->
+<!--    <a href="#" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Blog</a>-->
+<!--    <a href="https://snaptheprice.com/welcome?ref=690e4dd0ea3592f9cfea3923" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Snap</a>-->
+    <a href="https://www.paypal.com/ncp/payment/FPHLZ6P5M9RRU" class="gbtn" target="_blank">💖Donate</a>
   </div>
+
+
 
   <footer>
     <a href="https://www.instagram.com/nanakochandesu123/" target="_blank">
@@ -202,6 +236,7 @@
       <img src="Images/pinterest.svg" alt="YouTube" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(500%) hue-rotate(320deg);">
     </a>
   </footer>
+
 
 
   <script>
