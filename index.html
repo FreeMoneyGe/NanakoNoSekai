@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nanako No Sekai</title>
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -24,8 +23,13 @@
       color: #ff6fa8;
       padding: 2rem;
       position: relative;
+      transition: background 1s ease;
     }
 
+    body.night {
+      background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+      color: #a9c9ff;
+    }
 
     h1 {
       text-align: center;
@@ -37,15 +41,58 @@
       z-index: 2;
     }
 
-
-
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
 
+    #playBtn, #nightBtn {
+      position: fixed;
+      left: 50%;
+      background: linear-gradient(45deg, #ffb6c1, #ffc6d9);
+      color: white;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 182, 193, 0.6);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
 
-    .button-container {
+    #playBtn {
+      left: 50%;
+      bottom: 150px;
+      transform: translateX(-50%);
+      background: linear-gradient(45deg, #ffb6c1, #ffc6d9);
+      color: white;
+    }
+
+    #playBtn:hover {
+      transform: translateX(-50%) scale(1.1);
+      box-shadow: 0 6px 14px rgba(255, 105, 180, 0.6);
+    }
+
+    #playBtn.playing {
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px rgba(255,182,193,0.8); }
+      50% { box-shadow: 0 0 20px rgba(255,105,180,0.8); transform: translateX(-50%) scale(1.05); }
+      100% { box-shadow: 0 0 10px rgba(255,182,193,0.8); transform: translateX(-50%) scale(1); }
+    }
+
+    #nightBtn { top: 150px; left: 20px; transform: translateX(-50%); font-size: 20px; background: linear-gradient(45deg, #89008B, #ffc6d9);}
+
+    #nightBtn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 14px rgba(100, 100, 255, 0.4);
+    }
+
+  .button-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 1rem;
@@ -54,9 +101,7 @@
       margin: 0 auto 3rem auto;
       z-index: 2;
     }
-
     .btn {
-<!--      background: linear-gradient(45deg, #ffb6c1, #ffc6d9);-->
       color: white;
       text-decoration: none;
       padding: 1rem 1.2rem;
@@ -74,11 +119,10 @@
       box-shadow: 0 6px 14px rgba(255, 105, 180, 0.6);
     }
 
-
     .gbtn {
+      text-decoration: none;
       background-color: #64F5A6;
       color: #333;
-      text-decoration: none;
       padding: 1rem 1.2rem;
       border-radius: 1.5rem;
       font-size: 1.1rem;
@@ -112,88 +156,44 @@
       transform: scale(1.2) rotate(10deg);
     }
 
-
-    .sakura {
-      position: absolute;
-      top: -10px;
-      width: 15px;
-      height: 15px;
-      background: pink;
-      border-radius: 50% 50% 50% 0;
-      opacity: 0.8;
-      transform: rotate(45deg);
-      animation: fall linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0.5;
-      }
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 1.5rem;
-      }
-      .btn {
-        font-size: 1rem;
-        padding: 0.8rem 1rem;
-      }
-      .social-icon {
-        width: 35px;
-        height: 35px;
-      }
-    }
-
-#playBtn {
-    position: fixed;
-    left: 50%;
-    bottom: 100px;
-    transform: translateX(-50%);
-    background: linear-gradient(45deg, #ffb6c1, #ffc6d9);
-    color: white;
-    border: none;
-    border-radius: 2rem;
-    padding: 0.8rem 1.8rem;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.6);
-    transition: all 0.3s ease;
-    z-index: 10;
-  }
-
-  #playBtn:hover {
-    transform: translateX(-50%) scale(1.1);
-    box-shadow: 0 6px 14px rgba(255, 105, 180, 0.6);
-  }
-
-  #playBtn.playing {
-    animation: pulse 1.5s infinite;
-  }
-
-  @keyframes pulse {
-    0% { box-shadow: 0 0 10px rgba(255,182,193,0.8); }
-    50% { box-shadow: 0 0 20px rgba(255,105,180,0.8); transform: translateX(-50%) scale(1.05); }
-    100% { box-shadow: 0 0 10px rgba(255,182,193,0.8); transform: translateX(-50%) scale(1); }
-  }
-
-
-    .greeting {
-  font-family: 'Poppins', 'Cute Font', sans-serif;
-  font-size: clamp(2rem, 6vw, 4rem);
-  color: #ffb6c1;
-  text-shadow: 0 0 10px rgba(255, 182, 193, 0.6);
-  margin-bottom: 1rem;
-  text-align: center;
+  .sakura {
+  position: absolute;
+  top: -10px;
+  width: 15px;
+  height: 15px;
+  background: pink;
+  border-radius: 50% 50% 50% 0;
+  opacity: 0.85;
+  transform: rotate(45deg);
+  animation: fall linear infinite;
+  z-index: 1;
+  filter: drop-shadow(0 0 4px rgba(255,182,193,0.5));
 }
 
+.rain {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 15px;
+  background: rgba(173, 216, 230, 0.8);
+  border-radius: 40%;
+  opacity: 0.7;
+  animation: fall linear infinite;
+  z-index: 1;
+  filter: blur(0.5px);
+}
+
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(30deg);
+    opacity: 0.5;
+  }
+}
 
   </style>
 </head>
@@ -202,8 +202,22 @@
   <h1>🌸 Nanako Chan 🌸</h1>
 
 
+  <button id="nightBtn">🌙</button>
+  <button id="playBtn">Play Music 🎵</button>
 
-  <div class="button-container">
+  <audio id="dayMusic" loop>
+    <source src="Images/day-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="nightMusic" loop>
+    <source src="Images/night-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="rainSound" loop>
+    <source src="Images/rain.mp3" type="audio/mpeg">
+  </audio>
+
+   <div class="button-container">
 
     <a href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_L1ZYS&utm_source=default" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Binance</a>
     <a href="https://okx.com/join/28340700" class="btn" target="_blank" style="background-color: white; color: black;">OKX</a>
@@ -218,10 +232,7 @@
 <!--    <a href="https://snaptheprice.com/welcome?ref=690e4dd0ea3592f9cfea3923" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Snap</a>-->
     <a href="https://www.paypal.com/ncp/payment/FPHLZ6P5M9RRU" class="gbtn" target="_blank">💖Donate</a>
   </div>
-
-
-
-  <footer>
+    <footer>
     <a href="https://www.facebook.com/profile.php?id=61583188875986" target="_blank">
       <img src="Images/facebook.svg" alt="Facebook" class="social-icon" style="filter: invert(36%) sepia(97%) saturate(1553%) hue-rotate(194deg) brightness(98%) contrast(96%);">
     </a>
@@ -242,64 +253,131 @@
     </a>
 
   </footer>
-
-
-
   <script>
-    const numPetals = 25;
-    for (let i = 0; i < numPetals; i++) {
-      const petal = document.createElement('div');
-      petal.classList.add('sakura');
-      petal.style.left = Math.random() * 100 + 'vw';
-      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
-      petal.style.animationDelay = Math.random() * 5 + 's';
-      petal.style.width = 10 + Math.random() * 10 + 'px';
-      petal.style.height = 10 + Math.random() * 10 + 'px';
-      petal.style.opacity = 0.6 + Math.random() * 0.4;
-      document.body.appendChild(petal);
+    const dayMusic = document.getElementById('dayMusic');
+    const nightMusic = document.getElementById('nightMusic');
+    const rainSound = document.getElementById('rainSound');
+    const playBtn = document.getElementById('playBtn');
+    const nightBtn = document.getElementById('nightBtn');
+    const body = document.body;
+
+    let isPlaying = false;
+    let isNight = false;
+
+    dayMusic.volume = 0.6;
+    nightMusic.volume = 0.6;
+    rainSound.volume = 0.4;
+
+
+    function fadeAudio(audio, targetVolume, duration, onComplete) {
+      const step = (targetVolume - audio.volume) / (duration / 50);
+      const fade = setInterval(() => {
+        audio.volume = Math.max(0, Math.min(1, audio.volume + step));
+        if ((step > 0 && audio.volume >= targetVolume) ||
+            (step < 0 && audio.volume <= targetVolume)) {
+          clearInterval(fade);
+          if (onComplete) onComplete();
+        }
+      }, 50);
     }
+
+
+    function createSakura() {
+      for (let i = 0; i < 25; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('sakura');
+        petal.style.left = Math.random() * 100 + 'vw';
+        petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+        petal.style.animationDelay = Math.random() * 5 + 's';
+        petal.style.width = 10 + Math.random() * 10 + 'px';
+        petal.style.height = 10 + Math.random() * 10 + 'px';
+        petal.style.opacity = 0.6 + Math.random() * 0.4;
+        document.body.appendChild(petal);
+      }
+    }
+
+
+    function createRain() {
+      for (let i = 0; i < 80; i++) {
+        const drop = document.createElement('div');
+        drop.classList.add('rain');
+        drop.style.left = Math.random() * 100 + 'vw';
+        drop.style.animationDuration = 0.8 + Math.random() * 0.8 + 's';
+        drop.style.animationDelay = Math.random() * 2 + 's';
+        drop.style.height = 10 + Math.random() * 10 + 'px';
+        document.body.appendChild(drop);
+      }
+    }
+
+    function clearEffects() {
+      document.querySelectorAll('.sakura, .rain').forEach(el => el.remove());
+    }
+
+
+    playBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        stopAllMusic();
+        playBtn.textContent = 'Play Music 🎵';
+        playBtn.classList.remove('playing');
+      } else {
+        startCurrentMusic();
+        playBtn.textContent = 'Pause Music ⏸️';
+        playBtn.classList.add('playing');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    function startCurrentMusic() {
+      if (isNight) {
+        nightMusic.play().catch(() => {});
+        rainSound.play().catch(() => {});
+        fadeAudio(nightMusic, 0.6, 1000);
+        fadeAudio(rainSound, 0.4, 1500);
+      } else {
+        dayMusic.play().catch(() => {});
+        fadeAudio(dayMusic, 0.6, 1000);
+      }
+    }
+
+    function stopAllMusic() {
+      fadeAudio(dayMusic, 0, 800, () => dayMusic.pause());
+      fadeAudio(nightMusic, 0, 800, () => nightMusic.pause());
+      fadeAudio(rainSound, 0, 800, () => rainSound.pause());
+    }
+
+
+    nightBtn.addEventListener('click', () => {
+      isNight = !isNight;
+      body.classList.toggle('night', isNight);
+      clearEffects();
+
+      if (isNight) {
+        createRain();
+        nightBtn.textContent = '☀️';
+        fadeAudio(dayMusic, 0, 800, () => dayMusic.pause());
+        if (isPlaying) {
+          nightMusic.currentTime = 0;
+          rainSound.currentTime = 0;
+          nightMusic.play().catch(() => {});
+          rainSound.play().catch(() => {});
+          fadeAudio(nightMusic, 0.6, 1000);
+          fadeAudio(rainSound, 0.4, 1500);
+        }
+      } else {
+        createSakura();
+        nightBtn.textContent = '🌙';
+        fadeAudio(nightMusic, 0, 800, () => nightMusic.pause());
+        fadeAudio(rainSound, 0, 800, () => rainSound.pause());
+        if (isPlaying) {
+          dayMusic.currentTime = 0;
+          dayMusic.play().catch(() => {});
+          fadeAudio(dayMusic, 0.6, 1000);
+        }
+      }
+    });
+
+    // Start with day mode visuals
+    createSakura();
   </script>
-
-
-<button id="playBtn">Play Music 🎵</button>
-
-<audio id="bgMusic" loop>
-  <source src="Images/music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<script>
-  const btn = document.getElementById('playBtn');
-  const music = document.getElementById('bgMusic');
-  let isPlaying = false;
-
-  music.volume = 0.6;
-
-  btn.addEventListener('click', () => {
-    if (isPlaying) {
-      music.pause();
-      btn.textContent = 'Play Music 🎵';
-      btn.classList.remove('playing');
-    } else {
-      music.play();
-      btn.textContent = 'Pause Music ⏸️';
-      btn.classList.add('playing');
-    }
-    isPlaying = !isPlaying;
-  });
-</script>
-
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-22D8EMLYTH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-22D8EMLYTH');
-</script>
 </body>
 </html>
