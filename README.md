@@ -24,9 +24,9 @@ CSS3 — layout, responsiveness, and animations
 
 JavaScript (Vanilla) — to generate random falling sakura petals and handle interactive buttons
 
-📸 Preview
 
 👉 Live Demo
+
 https://freemoneyge.github.io/NanakoNoSekai/?fbclid=IwY2xjawN9Ah5leHRuA2FlbQIxMABicmlkETF0eW5QNkRGQ2JzZzNvS3Bjc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHjPhHfDpgLLC-t9FIV4jBy0ulJZhvICpsJYjeF-KopY1TU-G_v0dsNWTAMhE_aem_oa8q_U_cCWcHW2C6MyxVoA
 
 💖 Credits
