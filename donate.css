@@ -1,0 +1,80 @@
+body {
+      background: linear-gradient(135deg, #ffd6e0, #ffe9f0, #fff5f9);
+      color: #ff6fa8;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 1.5rem auto;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .donate-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .donate-image {
+      max-width: 300px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(255,182,193,0.5);
+    }
+
+    .donate-btn {
+      background: linear-gradient(45deg, #ff8acb, #ffc0e0);
+      color: white;
+      padding: 0.9rem 1.8rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 2rem;
+      box-shadow: 0 4px 10px rgba(255,182,193,0.6);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+
+    .donate-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 14px rgba(255,105,180,0.6);
+    }
+
+    .crypto-donate {
+      background: linear-gradient(45deg, #64f5a6, #7effc8);
+      color: #333;
+    }
+
+    footer {
+      margin-top: 3rem;
+    }
+
+  /* New container for the two buttons */
+  .donate-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Unified button look */
+.donate-btn {
+  width: 180px;
+  text-align: center;
+}
+
+/* Responsive: stack vertically on mobile */
+@media (max-width: 500px) {
+  h1{
+  font-size: 2rem;
+  }
+}
