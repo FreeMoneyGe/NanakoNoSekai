@@ -1,195 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nanako No Sekai</title>
-  <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nanako No Sekai</title>
+    <link rel="stylesheet" href="style.css">
 
-</head>
-<body>
+  </head>
+  <body>
 
-  <h1>🌸 Nanako Chan 🌸</h1>
+    <h1>🌸 Nanako Chan 🌸</h1>
 
+    <button id="nightBtn">🌙</button>
+    <button id="playBtn">Play Music 🎵</button>
 
-  <button id="nightBtn">🌙</button>
-  <button id="playBtn">Play Music 🎵</button>
+    <audio id="dayMusic" loop>
+      <source src="Images/day-music.mp3" type="audio/mpeg">
+    </audio>
 
-  <audio id="dayMusic" loop>
-    <source src="Images/day-music.mp3" type="audio/mpeg">
-  </audio>
+    <audio id="nightMusic" loop>
+      <source src="Images/night-music.mp3" type="audio/mpeg">
+    </audio>
 
-  <audio id="nightMusic" loop>
-    <source src="Images/night-music.mp3" type="audio/mpeg">
-  </audio>
+    <audio id="rainSound" loop>
+      <source src="Images/rain.mp3" type="audio/mpeg">
+    </audio>
 
-  <audio id="rainSound" loop>
-    <source src="Images/rain.mp3" type="audio/mpeg">
-  </audio>
+    <div class="button-container">
 
-   <div class="button-container">
+      <a href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_L1ZYS&utm_source=default" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Binance</a>
+      <a href="https://okx.com/join/28340700" class="btn" target="_blank" style="background-color: white; color: black;">OKX</a>
+      <a href="https://www.bybit.com/invite?ref=BNQPZ66" class="btn" target="_blank" style="background-color: black; color: white;">BYB<span style="color: goldenrod;">I</span>T</a>
+  <!--    <a href="https://www.coinbase.com/explore" class="btn" target="_blank" style="background-color: #0052FF; color: white;">coinbase</a>-->
+      <a href="https://www.kucoin.com/r/rf/CX8XGUET" class="btn" target="_blank" style="background-color: white; color: #24AE8F;">KuCoin</a>
+      <a href="https://www.bitget.com/referral/register?clacCode=Z3H47XXS&from=%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter" class="btn" target="_blank" style="background-color: #00F0FF; color: black;">Bitget</a>
+  <!--    <a href="#" class="btn" target="_blank" style="background-color: #5841D8; color: white;">Kraken</a>-->
+  <!--    <a href="#" class="btn" target="_blank" style="background-color: white;"><span style="color: #E53238;">e</span><span style="color: #0064D2;">B</span><span style="color: #F5AF02;">a</span><span style="color: #86B817;">y</span></a>-->
+  <!--    <a href="#" class="btn" target="_blank" style="background-color: #232F3E; color: white;">amazon</a>-->
+  <!--    <a href="#" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Blog</a>-->
+  <!--    <a href="https://snaptheprice.com/welcome?ref=690e4dd0ea3592f9cfea3923" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Snap</a>-->
+      <a href="https://www.paypal.com/ncp/payment/FPHLZ6P5M9RRU" class="gbtn" target="_blank">💖Donate</a>
+    </div>
 
-    <a href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=en&ref=GRO_28502_L1ZYS&utm_source=default" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Binance</a>
-    <a href="https://okx.com/join/28340700" class="btn" target="_blank" style="background-color: white; color: black;">OKX</a>
-    <a href="https://www.bybit.com/invite?ref=BNQPZ66" class="btn" target="_blank" style="background-color: black; color: white;">BYB<span style="color: goldenrod;">I</span>T</a>
-<!--    <a href="https://www.coinbase.com/explore" class="btn" target="_blank" style="background-color: #0052FF; color: white;">coinbase</a>-->
-    <a href="https://www.kucoin.com/r/rf/CX8XGUET" class="btn" target="_blank" style="background-color: white; color: #24AE8F;">KuCoin</a>
-    <a href="https://www.bitget.com/referral/register?clacCode=Z3H47XXS&from=%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter" class="btn" target="_blank" style="background-color: #00F0FF; color: black;">Bitget</a>
-<!--    <a href="#" class="btn" target="_blank" style="background-color: #5841D8; color: white;">Kraken</a>-->
-<!--    <a href="#" class="btn" target="_blank" style="background-color: white;"><span style="color: #E53238;">e</span><span style="color: #0064D2;">B</span><span style="color: #F5AF02;">a</span><span style="color: #86B817;">y</span></a>-->
-<!--    <a href="#" class="btn" target="_blank" style="background-color: #232F3E; color: white;">amazon</a>-->
-<!--    <a href="#" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Blog</a>-->
-<!--    <a href="https://snaptheprice.com/welcome?ref=690e4dd0ea3592f9cfea3923" class="btn" target="_blank" style="background-color: #F3BA2F; color: black;">Snap</a>-->
-    <a href="https://www.paypal.com/ncp/payment/FPHLZ6P5M9RRU" class="gbtn" target="_blank">💖Donate</a>
-  </div>
+    <footer>
+      <a href="https://www.facebook.com/profile.php?id=61583188875986" target="_blank">
+        <img src="Images/facebook.svg" alt="Facebook" class="social-icon" style="filter: invert(36%) sepia(97%) saturate(1553%) hue-rotate(194deg) brightness(98%) contrast(96%);">
+      </a>
+      <a href="https://www.youtube.com/channel/UCk7QnhFlzGWasYMPwm8IvhQ" target="_blank">
+        <img src="Images/youtube.svg" alt="YouTube" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(500%) hue-rotate(320deg);">
+      </a>
+      <a href="https://www.instagram.com/nanakochandesu123/" target="_blank">
+        <img src="Images/instagram.svg" alt="Instagram" class="social-icon" style="filter: invert(35%) sepia(73%) saturate(7496%) hue-rotate(314deg) brightness(96%) contrast(101%);">
+      </a>
+      <a href="https://www.tiktok.com/@nanakochandesu" target="_blank">
+        <img src="Images/tiktok.svg" alt="TikTok" class="social-icon" style="filter: hue-rotate(320deg);">
+      </a>
+      <a href="https://www.pinterest.com/NanakoChanDesu123/" target="_blank">
+        <img src="Images/pinterest.svg" alt="pinterest" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(500%) hue-rotate(320deg);">
+      </a>
+      <a href="https://www.linkedin.com/in/nanako-chan-574716391/" target="_blank">
+        <img src="Images/linkedin.svg" alt="linkedin" class="social-icon" style="filter: saturate(50%) hue-rotate(320deg);">
+      </a>
 
-  <footer>
-    <a href="https://www.facebook.com/profile.php?id=61583188875986" target="_blank">
-      <img src="Images/facebook.svg" alt="Facebook" class="social-icon" style="filter: invert(36%) sepia(97%) saturate(1553%) hue-rotate(194deg) brightness(98%) contrast(96%);">
-    </a>
-    <a href="https://www.youtube.com/channel/UCk7QnhFlzGWasYMPwm8IvhQ" target="_blank">
-      <img src="Images/youtube.svg" alt="YouTube" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(500%) hue-rotate(320deg);">
-    </a>
-    <a href="https://www.instagram.com/nanakochandesu123/" target="_blank">
-      <img src="Images/instagram.svg" alt="Instagram" class="social-icon" style="filter: invert(35%) sepia(73%) saturate(7496%) hue-rotate(314deg) brightness(96%) contrast(101%);">
-    </a>
-    <a href="https://www.tiktok.com/@nanakochandesu" target="_blank">
-      <img src="Images/tiktok.svg" alt="TikTok" class="social-icon" style="filter: hue-rotate(320deg);">
-    </a>
-    <a href="https://www.pinterest.com/NanakoChanDesu123/" target="_blank">
-      <img src="Images/pinterest.svg" alt="pinterest" class="social-icon" style="filter: invert(40%) sepia(80%) saturate(500%) hue-rotate(320deg);">
-    </a>
-    <a href="https://www.linkedin.com/in/nanako-chan-574716391/" target="_blank">
-      <img src="Images/linkedin.svg" alt="linkedin" class="social-icon" style="filter: saturate(50%) hue-rotate(320deg);">
-    </a>
+    </footer>
 
-  </footer>
-
-  <script>
-    const dayMusic = document.getElementById('dayMusic');
-    const nightMusic = document.getElementById('nightMusic');
-    const rainSound = document.getElementById('rainSound');
-    const playBtn = document.getElementById('playBtn');
-    const nightBtn = document.getElementById('nightBtn');
-    const body = document.body;
-
-    let isPlaying = false;
-    let isNight = false;
-
-    dayMusic.volume = 0.6;
-    nightMusic.volume = 0.6;
-    rainSound.volume = 0.4;
-
-
-    function fadeAudio(audio, targetVolume, duration, onComplete) {
-      const step = (targetVolume - audio.volume) / (duration / 50);
-      const fade = setInterval(() => {
-        audio.volume = Math.max(0, Math.min(1, audio.volume + step));
-        if ((step > 0 && audio.volume >= targetVolume) ||
-            (step < 0 && audio.volume <= targetVolume)) {
-          clearInterval(fade);
-          if (onComplete) onComplete();
-        }
-      }, 50);
-    }
-
-
-    function createSakura() {
-      for (let i = 0; i < 25; i++) {
-        const petal = document.createElement('div');
-        petal.classList.add('sakura');
-        petal.style.left = Math.random() * 100 + 'vw';
-        petal.style.animationDuration = 5 + Math.random() * 5 + 's';
-        petal.style.animationDelay = Math.random() * 5 + 's';
-        petal.style.width = 10 + Math.random() * 10 + 'px';
-        petal.style.height = 10 + Math.random() * 10 + 'px';
-        petal.style.opacity = 0.6 + Math.random() * 0.4;
-        document.body.appendChild(petal);
-      }
-    }
-
-
-    function createRain() {
-      for (let i = 0; i < 80; i++) {
-        const drop = document.createElement('div');
-        drop.classList.add('rain');
-        drop.style.left = Math.random() * 100 + 'vw';
-        drop.style.animationDuration = 0.8 + Math.random() * 0.8 + 's';
-        drop.style.animationDelay = Math.random() * 2 + 's';
-        drop.style.height = 10 + Math.random() * 10 + 'px';
-        document.body.appendChild(drop);
-      }
-    }
-
-    function clearEffects() {
-      document.querySelectorAll('.sakura, .rain').forEach(el => el.remove());
-    }
-
-
-    playBtn.addEventListener('click', () => {
-      if (isPlaying) {
-        stopAllMusic();
-        playBtn.textContent = 'Play Music 🎵';
-        playBtn.classList.remove('playing');
-      } else {
-        startCurrentMusic();
-        playBtn.textContent = 'Pause Music ⏸️';
-        playBtn.classList.add('playing');
-      }
-      isPlaying = !isPlaying;
-    });
-
-    function startCurrentMusic() {
-      if (isNight) {
-        nightMusic.play().catch(() => {});
-        rainSound.play().catch(() => {});
-        fadeAudio(nightMusic, 0.6, 1000);
-        fadeAudio(rainSound, 0.4, 1500);
-      } else {
-        dayMusic.play().catch(() => {});
-        fadeAudio(dayMusic, 0.6, 1000);
-      }
-    }
-
-    function stopAllMusic() {
-      fadeAudio(dayMusic, 0, 800, () => dayMusic.pause());
-      fadeAudio(nightMusic, 0, 800, () => nightMusic.pause());
-      fadeAudio(rainSound, 0, 800, () => rainSound.pause());
-    }
-
-
-    nightBtn.addEventListener('click', () => {
-      isNight = !isNight;
-      body.classList.toggle('night', isNight);
-      clearEffects();
-
-      if (isNight) {
-        createRain();
-        nightBtn.textContent = '☀️';
-        fadeAudio(dayMusic, 0, 800, () => dayMusic.pause());
-        if (isPlaying) {
-          nightMusic.currentTime = 0;
-          rainSound.currentTime = 0;
-          nightMusic.play().catch(() => {});
-          rainSound.play().catch(() => {});
-          fadeAudio(nightMusic, 0.6, 1000);
-          fadeAudio(rainSound, 0.4, 1500);
-        }
-      } else {
-        createSakura();
-        nightBtn.textContent = '🌙';
-        fadeAudio(nightMusic, 0, 800, () => nightMusic.pause());
-        fadeAudio(rainSound, 0, 800, () => rainSound.pause());
-        if (isPlaying) {
-          dayMusic.currentTime = 0;
-          dayMusic.play().catch(() => {});
-          fadeAudio(dayMusic, 0.6, 1000);
-        }
-      }
-    });
-
-
-    createSakura();
-  </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
